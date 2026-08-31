@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>개념 — 하네스 엔지니어링 · 메타스킬 6단계 · 6가지 패턴 · harness-edu2</title>
-<meta name="description" content="하네스 엔지니어링의 개념, 메타스킬 6단계, 6가지 아키텍처 패턴, 패턴 선택 3질문. revfactory/harness 원본 기준 15분 분량.">
+<meta name="description" content="하네스 엔지니어링의 개념, 메타스킬 6단계, 6가지 아키텍처 패턴, 패턴 선택 3질문. revfactory/harness 원본 기준.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23faf9f5'/%3E%3Cg fill='%23141413'%3E%3Crect x='11' y='1' width='2' height='22'/%3E%3Crect x='1' y='11' width='22' height='2'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(45 12 12)'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(-45 12 12)'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
 <main id="main" class="page">
 
 <div class="hero">
-  <div class="eyebrow">개념 · 15분</div>
+  <div class="eyebrow">개념</div>
   <h1>하네스 엔지니어링</h1>
   <p class="lead">이 페이지를 덮을 때 <strong>내 일이 어떤 패턴인지 3가지 질문으로 판단할 수 있게</strong> 됩니다. 정의를 외우는 것이 목적이 아닙니다.</p>
 </div>
@@ -46,16 +46,79 @@
 
 <p>프롬프트를 잘 쓰면 이번 답이 좋아집니다. 그런데 다음 주에 같은 일을 하려면 그 문장을 다시 찾아야 하고, 옆자리 동료는 다른 답을 받습니다. <strong>하네스(harness)</strong>는 그 한 번의 성공을 <strong>일하는 방식</strong>으로 굳히는 도구입니다 — 업무 설명을 읽고 AI 팀 구조로 바꿔 줍니다.</p>
 
-<h3>에이전트(누가) × 스킬(어떻게)</h3>
+<h3>세 개의 축 — 에이전트 · 스킬 · 툴</h3>
 
-<p>이 교재 전체를 관통하는 한 문장입니다. 하네스는 두 가지를 따로 만듭니다.</p>
+<p>하네스는 결국 이 셋의 조합입니다. <strong>무엇을 언제 쓰는지 구분하는 것</strong>이 이 과정에서 얻어 갈 감각입니다.</p>
 
-<div class="prep">
-  <div class="prep-item"><b>에이전트 · 누가</b><span>특정 역할을 맡은 AI 담당자. "시장 조사를 맡는 사람"</span></div>
-  <div class="prep-item"><b>스킬 · 어떻게</b><span>그 담당자가 따르는 절차와 기준. "출처 없는 주장은 쓰지 않는다"</span></div>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:110px">축</th><th style="width:150px">답하는 질문</th><th style="width:200px">실제로 무엇인가</th><th>성질</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>에이전트</strong><br><span class="muted">Agent</span></td>
+  <td><strong>누가</strong> — 역할과 경계</td>
+  <td><code>.claude/agents/이름.md</code><br>지시문 파일</td>
+  <td>일을 나눠 맡길 담당자. 예: 시장 조사자, 리뷰어</td>
+</tr>
+<tr>
+  <td><strong>스킬</strong><br><span class="muted">Skill</span></td>
+  <td><strong>어떻게</strong> — 절차와 기준</td>
+  <td><code>.claude/skills/이름/SKILL.md</code><br>모델이 읽는 문서</td>
+  <td><strong>설명서.</strong> 맥락에 따라 판단이 달라지는 일</td>
+</tr>
+<tr>
+  <td><strong>툴</strong><br><span class="muted">Tool</span></td>
+  <td><strong>무엇으로</strong> — 실행</td>
+  <td>실제 코드 (예: MCP 서버)</td>
+  <td><strong>계산기.</strong> 언제 실행해도 같은 값이 나와야 하는 일</td>
+</tr>
+</tbody></table></div>
+
+<blockquote class="rule"><p><strong>구분 규칙</strong> — 정의가 고정돼 <strong>늘 같은 답이 나와야 하는 일</strong>(계산·조회·API 호출)은 <strong>툴</strong>로, <strong>맥락에 따라 달라지는 판단</strong>(무엇이 중요한가·어떻게 쓸까)은 <strong>스킬</strong>로 맡깁니다. 그 둘을 누구에게 맡길지가 <strong>에이전트</strong>입니다.</p></blockquote>
+
+<p>이 과정의 실습 1·2·3은 <strong>에이전트와 스킬</strong>만 씁니다. 툴(MCP)은 <a href="install/mcp-server.html">선택 학습</a>으로 따로 있습니다 — 세 실습에 정확한 계산이 필요한 대목이 없기 때문입니다.</p>
+
+<h4>에이전트는 이렇게 생겼습니다</h4>
+
+<p>추상적인 개념이 아니라 <strong>파일 한 개</strong>입니다. 실습에서 하네스가 만들어 주는 것이 바로 이 모양입니다.</p>
+
+<div class="code-card is-lite">
+  <div class="code-bar"><span class="code-label">.claude/agents/reviewer.md</span></div>
+  <pre>---
+name: reviewer
+description: 근거·실행 가능성·누락을 점검하는 리뷰어. …
+model: opus
+---
+
+# reviewer — 검증 담당
+
+## 핵심 역할
+전략가가 만든 보고서를 만든 사람이 아닌 눈으로 검사한다.
+
+## 작업 원칙
+1. "문제 없음"으로 끝내지 않는다 — 지적 없이 통과시키면 검증이 아니다.
+2. 근거 없는 주장, 실행 주체가 없는 항목, 누락된 관점을 각각 찾는다.
+
+## 입력 / 출력 프로토콜
+입력: 전략가의 초안 · 출력: 수정 요청 목록
+
+## 사용 스킬
+`strategy-review` — 검토 기준과 지적 형식</pre>
 </div>
 
-<p>역할과 절차를 한 덩어리로 쓰면 재사용이 안 됩니다. 사무실에 비유하면, <strong>직무기술서(누가)와 업무 매뉴얼(어떻게)을 따로 두는 것</strong>과 같습니다. 사람이 바뀌어도 매뉴얼은 남고, 매뉴얼을 고치면 모든 담당자에게 적용됩니다.</p>
+<p>맨 위 <strong>frontmatter</strong>(<code>name</code>·<code>description</code>·<code>model</code>)가 이 담당자를 언제 부를지 정하고, 본문이 <strong>역할·원칙·입출력</strong>을 정합니다. <code>사용 스킬</code>이 이 담당자가 따를 설명서를 가리킵니다 — <strong>여기서 에이전트와 스킬이 연결됩니다.</strong></p>
+
+<h4>스킬은 누가 만드나</h4>
+
+<p>스킬도 파일입니다 — <code>SKILL.md</code> 한 장에 <strong>맨 위 두 줄(이름·설명)</strong>과 본문이 들어갑니다. 설명이 곧 <strong>이 스킬을 언제 쓸지</strong>를 정하는 유일한 장치라서, 여기가 부실하면 스킬이 있어도 불려 나오지 않습니다.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th style="width:200px">만드는 방법</th><th>언제 쓰나</th></tr></thead>
+<tbody>
+<tr><td><strong>하네스가 함께 만든다</strong></td><td>이 과정의 방식입니다. <code>하네스를 구성해줘</code> 한 문장으로 에이전트와 스킬이 같이 생깁니다 — 실습 1·2·3이 전부 이 경우입니다</td></tr>
+<tr><td><code>skill-creator</code> <strong>스킬</strong></td><td>스킬 하나만 새로 만들거나 기존 스킬을 다듬을 때. 팀 구조는 그대로 두고 <strong>설명서만</strong> 손봅니다</td></tr>
+</tbody></table></div>
+
+<p>실습에서는 하네스가 알아서 만들어 주므로 <code>skill-creator</code>를 직접 쓸 일은 없습니다. 다만 <strong>결과가 아쉬울 때 고칠 곳이 스킬이라는 것</strong>은 알아 두세요 — 다음 절의 진화가 그 이야기입니다.</p>
 
 <h3>하네스는 쓸수록 나아집니다</h3>
 
@@ -245,10 +308,10 @@
 <section class="sec">
 <div class="eyebrow">이제 할 일</div>
 <h2>여기까지가 개념입니다</h2>
-<p class="sub">남은 105분은 전부 직접 돌려 보는 시간입니다. 세 실습은 <strong>팀을 만든다 → 구조를 고른다 → 산출물을 다듬는다</strong> 순서로 이어집니다.</p>
+<p class="sub">여기서부터는 전부 직접 돌려 보는 시간입니다. 세 실습은 <strong>팀을 만든다 → 구조를 고른다 → 산출물을 다듬는다</strong> 순서로 이어집니다.</p>
 <div class="next-grid">
-  <a class="next-card" href="practice/1-youtube.html"><span class="k">다음 · 25분</span><strong>실습 1 · 유튜브 기획 팀</strong><span>한 문장으로 팀이 만들어지는 것을 봅니다.</span></a>
-  <a class="next-card" href="install/index.html"><span class="k">아직 설치 전이면</span><strong>설치가이드</strong><span>공통 준비 25~35분. 이것만 필수입니다.</span></a>
+  <a class="next-card" href="practice/1-youtube.html"><span class="k">다음</span><strong>실습 1 · 유튜브 기획 팀</strong><span>한 문장으로 팀이 만들어지는 것을 봅니다.</span></a>
+  <a class="next-card" href="install/index.html"><span class="k">아직 설치 전이면</span><strong>설치가이드</strong><span>공통 준비만 하면 됩니다. 이것만 필수입니다.</span></a>
 </div>
 </section>
 

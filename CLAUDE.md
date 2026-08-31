@@ -46,6 +46,10 @@
 | 2026-08-31 | 안전 원칙류 문구 전량 제거 | docs/ 7문서, workshop/ 4문서, agents/practice-designer.md, skills/practice-page-writing/ | 사용자 지시 — "말로 설명할 수 있다". "실 데이터 넣지 말라·보안 검토 거쳐라" 류만 제거하고 도구 사용법(승인 프롬프트·사내 보안 프로그램)은 유지 |
 | 2026-08-31 | 실습 1의 `5편`·`요일별`·`한 시리즈` 창작 내용 제거 | docs/practice/1-youtube.html, workshop/, skills/practice-page-writing/ | **브리프에 없는 숫자를 판정 기준으로 제시**했다. 학습자가 자기 결과를 틀렸다고 판단하게 만든다. 스킬과 에이전트 정의에 재발 방지 규칙 추가 |
 | 2026-08-31 | 실습 2 앞쪽에 멀티에이전트 개념 절 추가 | docs/practice/2-marketing.html | 실습 2가 정하는 구조가 왜 필요한지 없이 브리프로 바로 들어갔다. 패턴 선택 3질문을 이 실습에 적용한 표로 개념과 연결 |
+| 2026-08-31 | **검토 체크리스트 전량 제거** | docs/practice/ 3장, workshop/ 3문서 | 사용자 지시 |
+| 2026-08-31 | **워크샵·실습 시간 배분 전량 제거** | docs/ 5문서, workshop/ 4문서 | 사용자 지시. 브리프 원문의 `8–10분` 과 설치 소요시간은 성격이 달라 보존 |
+| 2026-08-31 | 개념 1부에 **Agent · Skill · Tool 3축** 절 추가 | docs/concept.html | 3축 구분·판단 규칙이 빠져 있었다. 에이전트 정의 파일 실물 예시, `skill-creator` 와 하네스 생성의 구분, 스킬(맥락 판단) ↔ 툴(고정 계산) 차이 포함. 1세대 harness-edu 의 3축 프레이밍 계승 |
+| 2026-08-31 | `namojo/harness-edu` 에 `workshop/` push (sample.pptx 포함) | 외부 저장소 | 실습 3 다운로드 링크 3개 **200 확인**. 저장소가 PUBLIC 임을 사용자에게 알린 뒤 승인받아 진행 |
 
 ## 현재 상태 (2026-08-31)
 
@@ -56,7 +60,7 @@
 
 **저장소에 넣지 않은 것:** `.gitignore` 로 `*.pptx` 전량과 `_workspace/assets/` 를 제외했다. 원본 `sample.pptx`(93.9MB)와 파생본(976KB)이 외부 제작물이고, 실습 자산의 정본은 `namojo/harness-edu` 의 `workshop/` 이기 때문이다.
 
-**자산:** `/Users/andy/Work/harness-edu/workshop/` 에 배치 완료 (untracked, 1.0MB). **push는 미완 — 그때까지 실습 3의 다운로드 링크 3개가 404다.** 절차는 `_workspace/07_assets_repo_plan.md`.
+**자산:** `namojo/harness-edu` 의 `workshop/` 에 **push 완료** (텍스트 5파일 + `sample.pptx` 972KB). 실습 3의 다운로드 링크 3개 전부 200 확인. `harness-edu` 는 PUBLIC 저장소이며, 그 사실을 알린 뒤 사용자 승인으로 `sample.pptx` 를 올렸다.
 
 **sample.pptx:** 사용자 제공 93.9MB(동원 고추참치 'GO-TO TUNA' 제안서 10장)에서 인물 사진과 72MB 동영상을 제외한 5장을 렌더해 **976KB**로 축소. 외부 제작물이므로 공개 저장소 push 전 배포 가능 여부 확인 권장 — `_workspace/07_assets_manifest.md` §저작권.
 

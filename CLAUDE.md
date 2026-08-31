@@ -42,6 +42,10 @@
 | 2026-08-31 | **Python 을 필수 공통 준비에서 선택 학습(MCP)으로 이동** | docs/install/ 4문서 | 실습 1·2·3에 Python 이 쓰이지 않는데 필수 흐름에 남아 앞뒤가 안 맞았다. 공통 준비 30~40분 → 25~35분 |
 | 2026-08-31 | 사이드바 레이블 `h4` → `p.side-label` (5문서 15건) + CSS | docs/install/, docs/assets/site.css | 제목 레벨 건너뜀(h2→h4) 5건 해소. 본문 h3→h4 는 정상이라 유지 |
 | 2026-08-31 | **GitHub Pages 배포** | namojo/harness-edu2 | https://namojo.github.io/harness-edu2 |
+| 2026-08-31 | 진화 메커니즘 도식·설명 재작성 — 사용→피드백→진화→기록 순환 | docs/concept.html, skills/harness-concept-source/ | README 의 "팩토리 되먹임" 표현만 인용해 **피드백 일반화와 기록 단계가 빠졌다**. `evolve` 스킬의 실제 도식을 정본으로 채택 |
+| 2026-08-31 | 안전 원칙류 문구 전량 제거 | docs/ 7문서, workshop/ 4문서, agents/practice-designer.md, skills/practice-page-writing/ | 사용자 지시 — "말로 설명할 수 있다". "실 데이터 넣지 말라·보안 검토 거쳐라" 류만 제거하고 도구 사용법(승인 프롬프트·사내 보안 프로그램)은 유지 |
+| 2026-08-31 | 실습 1의 `5편`·`요일별`·`한 시리즈` 창작 내용 제거 | docs/practice/1-youtube.html, workshop/, skills/practice-page-writing/ | **브리프에 없는 숫자를 판정 기준으로 제시**했다. 학습자가 자기 결과를 틀렸다고 판단하게 만든다. 스킬과 에이전트 정의에 재발 방지 규칙 추가 |
+| 2026-08-31 | 실습 2 앞쪽에 멀티에이전트 개념 절 추가 | docs/practice/2-marketing.html | 실습 2가 정하는 구조가 왜 필요한지 없이 브리프로 바로 들어갔다. 패턴 선택 3질문을 이 실습에 적용한 표로 개념과 연결 |
 
 ## 현재 상태 (2026-08-31)
 

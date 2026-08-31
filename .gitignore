@@ -6,7 +6,10 @@
 
 # 원본 pptx — 대용량(93.9MB)이며 외부 제작물이다.
 # 실습용 sample.pptx 는 namojo/harness-edu 저장소의 workshop/ 이 정본이다.
-*.pptx
+/*.pptx
+
+# 슬라이드 덱 중간 산출물 (src 에서 재생성 가능)
+slides/html/
 
 # 저장소 push 대기용 자산 스테이징 (정본은 namojo/harness-edu)
 _workspace/assets/

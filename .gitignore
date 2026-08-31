@@ -10,6 +10,9 @@
 
 # 슬라이드 덱 중간 산출물 (src 에서 재생성 가능)
 slides/html/
+slides/sample-src/flat/
+slides/sample-src/jpg/
+slides/sample-src/v0*.jpg
 
 # 저장소 push 대기용 자산 스테이징 (정본은 namojo/harness-edu)
 _workspace/assets/

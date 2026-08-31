@@ -13,9 +13,27 @@ for m in (gen_a, gen_b, gen_c): S.update(m.S)
 CSS = (SRC/'base.css').read_text(encoding='utf-8')
 TOTAL = len(S)
 
+# 제목·설명을 한 줄에 맞춘다. 한국어 제목은 길이가 제각각이라 폰트를 손으로 맞추면
+# 내용을 고칠 때마다 다시 어긋난다. 렌더 직전에 실제 폭을 재서 줄이는 것이 유일하게 안 깨지는 방법.
+FIT = '''<script>
+(function(){
+  var W = 1920 - 200;                       // 좌우 여백 100px
+  document.querySelectorAll('.slide:not(.dark) h1, .slide:not(.dark) .lede').forEach(function(el){
+    if (el.closest('.cover')) return;       // 커버·섹션 구분은 2줄 허용
+    var fs = parseFloat(getComputedStyle(el).fontSize);
+    var min = el.tagName === 'H1' ? 34 : 20;
+    var guard = 0;
+    while (el.scrollWidth > W && fs > min && guard++ < 80) {
+      fs -= 1; el.style.fontSize = fs + 'px';
+    }
+    el.dataset.fit = fs;
+  });
+})();
+</script>'''
+
 TPL = '''<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <title>{n:02d}</title><style>{css}</style></head><body>
-<div class="slide {cls}">{head}{body}{foot}</div></body></html>'''
+<div class="slide {cls}">{head}{body}</div>{fit}</body></html>'''
 
 def head(num, eyebrow):
     if not (num or eyebrow): return ''
@@ -27,11 +45,8 @@ def build():
         kind, num, eyebrow, body = S[n]
         cls = 'dark' if kind in ('cover','dark') else ''
         h = '' if kind in ('cover','dark') else head(num, eyebrow)
-        foot = ('' if kind=='cover' else
-                f'<div class="foot"><span>harness-edu2 · 하네스 엔지니어링 워크샵</span>'
-                f'<span class="pg">{n:02d} / {TOTAL:02d}</span></div>')
         (HTML/f'{n:02d}.html').write_text(
-            TPL.format(n=n, css=CSS, cls=cls, head=h, body=body, foot=foot), encoding='utf-8')
+            TPL.format(n=n, css=CSS, cls=cls, head=h, body=body, fit=FIT), encoding='utf-8')
     return sorted(HTML.glob('*.html'))
 
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'

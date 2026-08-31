@@ -18,7 +18,7 @@ S[1] = ('cover', '', '', '''
 </div>''')
 
 S[2] = ('light', '01', 'OUTCOME', '''
-<h1>결론 — 답을 받는 법이 아니라<br>일하는 방식을 설계합니다</h1>
+<h1>결론 — 답을 받는 법이 아니라 일하는 방식을 설계합니다</h1>
 <div class="body">
 <div class="grid g3">
   <div class="card flat"><div class="k">BEFORE</div><h3>프롬프트를 잘 쓴다</h3>
@@ -35,7 +35,7 @@ S[2] = ('light', '01', 'OUTCOME', '''
 </div>''')
 
 S[3] = ('light', '02', 'WHY', '''
-<h1>같은 일을 두 번째로 할 때<br>무엇이 남아 있는가</h1>
+<h1>같은 일을 두 번째로 할 때 무엇이 남아 있는가</h1>
 <div class="body">
 <div class="vs">
   <div class="bad">

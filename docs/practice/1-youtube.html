@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실습 1. 유튜브 콘텐츠 기획 팀 · harness-edu2</title>
+<meta name="description" content="업무 설명 한 문장으로 전문가 팀을 만듭니다. 브리프 · 예상 팀 · 검토 체크리스트까지 25분 실습.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23faf9f5'/%3E%3Cg fill='%23141413'%3E%3Crect x='11' y='1' width='2' height='22'/%3E%3Crect x='1' y='11' width='22' height='2'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(45 12 12)'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(-45 12 12)'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-page="practice-1">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="../index.html">
+    <span class="spike" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="#141413"><rect x="11" y="1" width="2" height="22"/><rect x="1" y="11" width="22" height="2"/><rect x="3.8" y="3.8" width="2" height="16.4" transform="rotate(45 12 12)"/><rect x="3.8" y="3.8" width="2" height="16.4" transform="rotate(-45 12 12)"/></g></svg></span>
+    <span class="brand-full">harness-edu2</span>
+  </a>
+  <nav aria-label="주요 메뉴">
+    <a href="../index.html">과정 홈</a>
+    <a href="../concept.html">개념</a>
+    <a href="1-youtube.html" aria-current="page">실습 1</a>
+    <a href="2-marketing.html">실습 2</a>
+    <a href="3-pptx.html">실습 3</a>
+    <a href="../install/index.html">설치가이드</a>
+  </nav>
+</div></header>
+
+<main id="main" class="page">
+
+<div class="hero">
+  <div class="eyebrow">실습 1 · 25분</div>
+  <h1>유튜브 콘텐츠 기획 팀</h1>
+  <p class="lead">이 실습을 마치면 <strong>업무 설명 한 문장으로 전문가 팀을 만들 수 있게</strong> 됩니다.</p>
+</div>
+
+<article class="prose">
+
+<section class="sec">
+<h2 id="준비물">준비물</h2>
+<div class="prep">
+  <div class="prep-item"><b>입력 파일</b><span>없습니다. 브리프 한 편이 전부입니다</span></div>
+  <div class="prep-item"><b>필요한 것</b><span>Claude Code 실행 + 하네스 플러그인 <a href="../install/index.html">설치가이드</a></span></div>
+</div>
+<p>실습 저장소를 받아 두었다면 <code>harness-edu/workshop/practice-1-youtube/</code> 에서 <code>claude</code> 를 켜세요. 안 받았어도 아무 빈 폴더에서 진행할 수 있습니다.</p>
+
+<section class="callout callout-stop"><span class="callout-icon" aria-hidden="true">🔒</span><div class="callout-body">
+<p><strong>실습 안전 원칙 — 세 실습 공통입니다.</strong> 실제 고객정보·계약·인사·미공개 전략은 넣지 않습니다. 공개 자료 또는 교육용 가상 데이터로 팀 구조를 먼저 검증하세요. 브랜드가 정해지지 않았으면 아무 공개 브랜드나 관심 주제를 넣으면 됩니다.</p>
+</div></section>
+</section>
+
+<section class="sec">
+<h2>이번 실습에서 확인할 것</h2>
+<div class="mission">
+  <div class="mi"><b>INPUT</b><span>업무 설명 한 문장이 입력의 전부입니다</span></div>
+  <div class="mi"><b>TEAM</b><span>하네스가 역할을 나누고 전달 관계를 정합니다</span></div>
+  <div class="mi"><b>OUTPUT</b><span>1주치 기획안이 하나의 시리즈로 보입니다</span></div>
+</div>
+</section>
+
+<section class="sec">
+<h2 id="브리프">브리프</h2>
+<p>아래를 그대로 복사해 Claude Code에 붙여넣으세요. <strong>대괄호 두 곳만</strong> 본인 것으로 바꿉니다.</p>
+
+<div class="code-card is-prompt">
+  <div class="code-bar"><span class="code-label">COPY &amp; RUN</span><button class="copy-btn" type="button" data-copy>복사</button></div>
+  <pre class="brief">하네스를 구성해줘.
+[브랜드/주제]를 위한 유튜브 콘텐츠 기획 팀이 필요해.
+트렌드 조사, 8–10분 대본 기획, 제목·태그 SEO, 썸네일 콘셉트를 맡기고,
+최종적으로 1주치 콘텐츠 기획안을 만들어줘.
+대상은 [20대 직장인]이고, 주장마다 근거 출처를 남겨줘.</pre>
+</div>
+<p class="brief-note">붙여넣은 뒤 5행 그대로 들어왔는지 확인하세요. 3행의 <code>8–10분</code> 은 하이픈이 아니라 en dash(–)입니다.</p>
+
+<h3>좋은 브리프는 네 요소만 분명하면 됩니다</h3>
+<p>이 틀은 실습이 끝난 뒤 <strong>본인 업무로 브리프를 다시 쓸 때</strong> 그대로 씁니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:110px">요소</th><th style="width:120px">묻는 것</th><th>이 브리프에서</th></tr></thead>
+<tbody>
+<tr><td><strong>목표</strong></td><td>무엇을 받고 싶은가</td><td>1주치 콘텐츠 기획안</td></tr>
+<tr><td><strong>대상</strong></td><td>누구를 위한 것인가</td><td>20대 직장인</td></tr>
+<tr><td><strong>역할</strong></td><td>누가 필요한가</td><td>트렌드 조사 · 대본 기획 · 제목·태그 SEO · 썸네일 콘셉트</td></tr>
+<tr><td><strong>기준</strong></td><td>무엇을 지켜야 하는가</td><td>주장마다 근거 출처</td></tr>
+</tbody></table></div>
+<p>네 요소 중 하나라도 비면 하네스가 대신 정합니다. 그러면 결과가 매번 달라집니다 — <strong>결과가 흔들릴 때는 브리프의 빈 요소를 먼저 찾으세요.</strong></p>
+</section>
+
+<section class="sec">
+<h2>예상 팀</h2>
+
+<section class="callout callout-tip"><span class="callout-icon" aria-hidden="true">💡</span><div class="callout-body">
+<p><strong>아래는 정답이 아니라 대조용 기준선입니다.</strong> 하네스는 실행할 때마다 다른 팀을 만듭니다. 결과가 이 표와 달라도 실패가 아닙니다 — 아래 <strong>네 가지가 정해졌으면 성공</strong>입니다.</p>
+</div></section>
+
+<div class="mission">
+  <div class="mi"><b>01 역할 경계</b><span>누가 무엇까지 하는지가 겹치지 않게 갈렸는가</span></div>
+  <div class="mi"><b>02 전달 관계</b><span>누가 누구에게 무엇을 넘기는지 정해졌는가</span></div>
+  <div class="mi"><b>03 최종 형식</b><span>산출물의 형태가 명시되었는가</span></div>
+  <div class="mi"><b>04 별도 리뷰</b><span>만든 사람이 아닌 눈이 검사하는가</span></div>
+</div>
+
+<div class="table-wrap"><table>
+<thead><tr><th style="width:150px">역할</th><th>책임</th><th style="width:210px">전달물</th></tr></thead>
+<tbody>
+<tr><td>트렌드 리서처</td><td>20대 직장인이 지금 보는 소재 조사, 출처 확보</td><td>소재 후보 + 근거 링크</td></tr>
+<tr><td>대본 기획자</td><td>8–10분 분량에 맞는 구조 설계</td><td>편당 구성안 (도입·전개·마무리)</td></tr>
+<tr><td>SEO 담당</td><td>검색·추천에 걸리는 제목·태그 후보 작성</td><td>제목 3안 + 태그 세트</td></tr>
+<tr><td>썸네일 콘셉트</td><td>클릭을 만드는 시각 후크 설계</td><td>콘셉트 문구 + 구도 설명</td></tr>
+<tr><td>편집 통합</td><td>5편을 1주치 시리즈로 묶기</td><td>최종 기획안</td></tr>
+</tbody></table></div>
+
+<figure class="diagram">
+<svg viewBox="0 0 700 190" role="img" aria-labelledby="d1-t d1-d">
+  <title id="d1-t">실습 1의 팀 구조</title>
+  <desc id="d1-d">브리프 한 편에서 트렌드 조사·대본 기획·SEO·썸네일 네 담당으로 갈라진 뒤, 편집 통합이 1주치 기획안으로 묶습니다.</desc>
+  <g font-family="Inter, Noto Sans KR, sans-serif" font-size="12.5">
+    <rect x="6" y="72" width="96" height="44" rx="8" fill="#181715"/>
+    <text x="54" y="93" text-anchor="middle" fill="#faf9f5" font-size="12">브리프</text>
+    <text x="54" y="108" text-anchor="middle" fill="#a09d96" font-size="10.5">한 문장</text>
+    <path d="M110 94h34" stroke="#cc785c" stroke-width="1.5"/><path d="M144 94l-7-4v8z" fill="#cc785c"/>
+    <rect x="152" y="8" width="150" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="227" y="30" text-anchor="middle" fill="#252523">트렌드 리서처</text>
+    <rect x="152" y="50" width="150" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="227" y="72" text-anchor="middle" fill="#252523">대본 기획자</text>
+    <rect x="152" y="92" width="150" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="227" y="114" text-anchor="middle" fill="#252523">SEO 담당</text>
+    <rect x="152" y="134" width="150" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="227" y="156" text-anchor="middle" fill="#252523">썸네일 콘셉트</text>
+    <path d="M310 25h44M310 67h44M310 109h44M310 151h44" stroke="#d8cec2" stroke-width="1.3"/>
+    <rect x="362" y="72" width="118" height="44" rx="8" fill="#efe9de" stroke="#e6dfd8"/>
+    <text x="421" y="99" text-anchor="middle" fill="#252523">편집 통합</text>
+    <path d="M488 94h34" stroke="#cc785c" stroke-width="1.5"/><path d="M522 94l-7-4v8z" fill="#cc785c"/>
+    <rect x="530" y="68" width="164" height="52" rx="8" fill="#fff" stroke="#cc785c"/>
+    <text x="612" y="90" text-anchor="middle" fill="#141413" font-size="12.5">1주치 콘텐츠 기획안</text>
+    <text x="612" y="107" text-anchor="middle" fill="#6c6a64" font-size="10.5">5편 · 한 시리즈</text>
+  </g>
+</svg>
+<figcaption>네 담당은 서로를 기다리지 않고, 통합 담당이 하나로 묶습니다.</figcaption>
+</figure>
+</section>
+
+<section class="sec">
+<h2>예상 산출물</h2>
+<p>요일별 1주치 기획안입니다. 각 편이 <strong>소재 · 근거 · 왜 지금 · 제목안 · 태그 · 썸네일 콘셉트</strong>를 갖습니다.</p>
+<p>품질 기준은 하나입니다 — <strong>한 주가 하나의 시리즈로 읽히는가.</strong> 5편이 서로 무관하게 흩어져 있으면 통합 단계가 제대로 돌지 않은 것입니다. 그때는 "5편이 하나의 시리즈로 보이게 묶어 달라"를 덧붙여 다시 실행하세요.</p>
+</section>
+
+<section class="sec">
+<h2 id="체크리스트">검토 체크리스트</h2>
+<ul class="checks">
+  <li><label><input type="checkbox"><span>에이전트가 4개 이상 만들어졌고, 두 에이전트의 책임이 겹치는 곳이 없다</span></label></li>
+  <li><label><input type="checkbox"><span>누가 누구에게 무엇을 넘기는지가 명시되어 있다</span></label></li>
+  <li><label><input type="checkbox"><span>최종 산출물의 형식(1주치 기획안)이 정해져 있다</span></label></li>
+  <li><label><input type="checkbox"><span>각 편에 대상(20대 직장인)과의 연결이 한 줄로 적혀 있다</span></label></li>
+  <li><label><input type="checkbox"><span>외부 사실 주장마다 출처가 붙어 있다 — 붙지 않은 문장을 세어 보세요</span></label></li>
+  <li><label><input type="checkbox"><span>5편이 서로 다른 소재이면서 한 시리즈로 읽힌다</span></label></li>
+</ul>
+<p class="checks-gate"><strong>6개 중 5개 이상이면 통과입니다.</strong> 하나가 X여도 다음으로 넘어가세요 — 고치는 방법은 아래에 있습니다.</p>
+</section>
+
+<section class="sec">
+<h2>이럴 때는</h2>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:250px">증상</th><th>이렇게 하세요</th></tr></thead>
+<tbody>
+<tr><td>하네스가 팀을 만들지 않고 기획안만 바로 나온다</td><td>브리프 첫 줄 <code>하네스를 구성해줘.</code> 가 있는지 확인하세요. 있는데도 안 되면 플러그인 미설치입니다 — <a href="../install/index.html">설치가이드</a> 참조.</td></tr>
+<tr><td>에이전트가 8개 넘게 만들어진다</td><td>역할이 너무 잘게 쪼개진 것입니다. "조사와 SEO는 한 사람이 맡아도 됩니다"처럼 묶어 달라고 덧붙여 다시 실행하세요.</td></tr>
+<tr><td>출처가 하나도 없다</td><td>웹 조사를 하지 않은 경우입니다. "실제 검색으로 근거를 확인하고 링크를 남겨 달라"를 추가하세요.</td></tr>
+<tr><td>실행이 오래 걸려 25분을 넘긴다</td><td>조사 범위를 제한하세요 — "소재는 관점별 3개까지"처럼 개수 상한을 브리프에 넣습니다.</td></tr>
+<tr><td>결과가 매번 다르다</td><td><strong>정상입니다.</strong> 하네스가 만드는 것은 팀 구조이고, 그 구조가 위 네 가지를 만족하면 성공입니다.</td></tr>
+<tr><td>브랜드를 못 정해서 막힌다</td><td>아무 공개 브랜드나 관심 주제를 넣으세요. 실제 업무 데이터는 넣지 않습니다.</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="sec">
+<h2>다음 단계</h2>
+<p>실습 1이 <strong>팀을 만드는 것</strong>이었다면, 실습 2는 그 팀에 <strong>구조를 주는 것</strong>입니다 — 누가 병렬로 일하고 누가 검사하는지를 브리프 안에 직접 씁니다.</p>
+<div class="next-grid">
+  <a class="next-card" href="2-marketing.html"><span class="k">다음 · 30분</span><strong>실습 2 · 브랜드 마케팅 전략보고서</strong><span>팬아웃/팬인 + 생성-검증을 한 브리프에 담습니다.</span></a>
+  <a class="next-card" href="../concept.html#"><span class="k">복습</span><strong>개념 · 6가지 패턴</strong><span>지금 만든 팀이 어느 모양이었는지 확인해 보세요.</span></a>
+</div>
+</section>
+
+</article>
+
+<nav class="pager" aria-label="페이지 이동">
+  <a href="../concept.html"><span class="dir">← 이전</span><strong>개념</strong></a>
+  <a class="pager-next" href="2-marketing.html"><span class="dir">다음 →</span><strong>실습 2 · 브랜드 마케팅 전략보고서</strong></a>
+</nav>
+
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>harness-edu2 · 실습 1</span>
+  <span class="r">개념·패턴 출처 <a href="https://github.com/revfactory/harness" target="_blank" rel="noopener">revfactory/harness</a></span>
+</div></footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

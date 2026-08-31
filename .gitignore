@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Office 임시/잠금 파일
+~$*
+
+# 원본 pptx — 대용량(93.9MB)이며 외부 제작물이다.
+# 실습용 sample.pptx 는 namojo/harness-edu 저장소의 workshop/ 이 정본이다.
+*.pptx
+
+# 저장소 push 대기용 자산 스테이징 (정본은 namojo/harness-edu)
+_workspace/assets/

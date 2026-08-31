@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실습 2. 브랜드 마케팅 전략보고서 · harness-edu2</title>
+<meta name="description" content="독립 조사 → 통합 → 별도 검토를 프롬프트 한 편에 담습니다. 팬아웃/팬인 + 생성-검증 30분 실습.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23faf9f5'/%3E%3Cg fill='%23141413'%3E%3Crect x='11' y='1' width='2' height='22'/%3E%3Crect x='1' y='11' width='22' height='2'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(45 12 12)'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(-45 12 12)'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-page="practice-2">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="../index.html">
+    <span class="spike" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="#141413"><rect x="11" y="1" width="2" height="22"/><rect x="1" y="11" width="22" height="2"/><rect x="3.8" y="3.8" width="2" height="16.4" transform="rotate(45 12 12)"/><rect x="3.8" y="3.8" width="2" height="16.4" transform="rotate(-45 12 12)"/></g></svg></span>
+    <span class="brand-full">harness-edu2</span>
+  </a>
+  <nav aria-label="주요 메뉴">
+    <a href="../index.html">과정 홈</a>
+    <a href="../concept.html">개념</a>
+    <a href="1-youtube.html">실습 1</a>
+    <a href="2-marketing.html" aria-current="page">실습 2</a>
+    <a href="3-pptx.html">실습 3</a>
+    <a href="../install/index.html">설치가이드</a>
+  </nav>
+</div></header>
+
+<main id="main" class="page">
+
+<div class="hero">
+  <div class="eyebrow">실습 2 · 30분</div>
+  <h1>브랜드 마케팅 전략보고서</h1>
+  <p class="lead">이 실습을 마치면 <strong>독립 조사 → 통합 → 별도 검토를 프롬프트 한 편에 담을 수 있게</strong> 됩니다.</p>
+</div>
+
+<article class="prose">
+
+<section class="sec">
+<h2 id="준비물">준비물</h2>
+<div class="prep">
+  <div class="prep-item"><b>입력 파일</b><span>없습니다. 브리프 한 편이 전부입니다</span></div>
+  <div class="prep-item"><b>미리 정할 것</b><span>결과를 저장할 폴더 — <strong>실습 3이 이 산출물을 씁니다</strong></span></div>
+</div>
+
+<section class="callout callout-stop"><span class="callout-icon" aria-hidden="true">💾</span><div class="callout-body">
+<p><strong>결과를 반드시 파일로 저장하세요.</strong> 실습 3은 이 전략보고서를 입력으로 씁니다. 저장하지 않으면 40분 실습에서 전략을 다시 만들어야 합니다. 실습 저장소를 받았다면 <code>harness-edu/workshop/practice-2-marketing/strategy.md</code> 로 저장하는 것을 권합니다.</p>
+</div></section>
+
+<p><a href="1-youtube.html#준비물">실습 안전 원칙</a>은 실습 1과 같습니다 — 실제 고객정보·계약·미공개 전략은 넣지 않습니다.</p>
+</section>
+
+<section class="sec">
+<h2>이번 실습에서 확인할 것</h2>
+<div class="mission">
+  <div class="mi"><b>PATTERN</b><span>관점은 병렬로, 결론은 하나로</span></div>
+  <div class="mi"><b>REVIEW</b><span>만든 사람이 아닌 눈이 검사합니다</span></div>
+  <div class="mi"><b>EVIDENCE</b><span>사실과 가정이 구분되어 표기됩니다</span></div>
+</div>
+</section>
+
+<section class="sec">
+<h2 id="브리프">브리프</h2>
+<p>실습 1과 결정적으로 다른 점이 있습니다. <strong>이 브리프는 팀 구조를 직접 지정합니다</strong> — 하네스에게 맡기지 않고 "독립적으로 조사한 뒤", "별도 리뷰어가"를 명시합니다.</p>
+
+<div class="code-card is-prompt">
+  <div class="code-bar"><span class="code-label">COPY &amp; RUN</span><button class="copy-btn" type="button" data-copy>복사</button></div>
+  <pre class="brief">[브랜드]의 [제품/서비스]를 위한  마케팅 전략보고서 하네스를 구성해줘.
+시장·고객·경쟁·채널을 독립적으로 조사한 뒤 전략가가 통합하고,
+별도 리뷰어가 근거·실행 가능성·누락을 점검하게 해줘.
+최종 산출물은 1페이지 요약, 실행 우선순위 표, 측정지표를 포함해줘.
+사실과 가정을 구분하고 모든 외부 주장에 출처를 남겨줘.</pre>
+</div>
+<p class="brief-note">대괄호 두 곳만 바꿉니다. 실제 담당 브랜드가 있으면 공개된 정보 범위에서 쓰세요.</p>
+
+<h3>이 브리프 안에 패턴 두 개가 들어 있습니다</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>브리프의 문장</th><th style="width:170px">패턴</th><th style="width:230px">이 문장이 만드는 것</th></tr></thead>
+<tbody>
+<tr><td><code>시장·고객·경쟁·채널을 독립적으로 조사한 뒤 전략가가 통합하고</code></td><td><strong>팬아웃 / 팬인</strong></td><td>조사자 4명이 서로를 기다리지 않고, 전략가 1명이 합칩니다</td></tr>
+<tr><td><code>별도 리뷰어가 근거·실행 가능성·누락을 점검하게 해줘</code></td><td><strong>생성-검증</strong></td><td>만든 담당과 검사하는 담당이 다른 사람이 됩니다</td></tr>
+</tbody></table></div>
+<p><strong>"별도"라는 단어 하나가 에이전트 하나를 만듭니다.</strong> 이 단어를 빼면 전략가가 자기 결과를 자기가 검토합니다 — 그러면 거의 언제나 "문제 없음"이 나옵니다.</p>
+</section>
+
+<section class="sec">
+<h2>예상 팀</h2>
+
+<figure class="diagram">
+<svg viewBox="0 0 700 210" role="img" aria-labelledby="d2-t d2-d">
+  <title id="d2-t">실습 2의 팬아웃/팬인 + 생성-검증 구조</title>
+  <desc id="d2-d">브리프가 시장·고객·경쟁·채널 네 조사로 갈라지고, 전략가가 하나로 통합한 뒤, 별도 리뷰어가 검증해 최종 보고서가 됩니다. 리뷰어의 수정 요청은 전략가로 되돌아갑니다.</desc>
+  <g font-family="Inter, Noto Sans KR, sans-serif" font-size="12">
+    <rect x="4" y="82" width="86" height="42" rx="8" fill="#181715"/>
+    <text x="47" y="107" text-anchor="middle" fill="#faf9f5">브리프</text>
+    <path d="M98 103h30" stroke="#cc785c" stroke-width="1.5"/><path d="M128 103l-7-4v8z" fill="#cc785c"/>
+    <rect x="136" y="8" width="128" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="200" y="24" text-anchor="middle" fill="#252523">시장 조사</text><text x="200" y="37" text-anchor="middle" fill="#8e8b82" font-size="10">카테고리·변화</text>
+    <rect x="136" y="50" width="128" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="200" y="66" text-anchor="middle" fill="#252523">고객 조사</text><text x="200" y="79" text-anchor="middle" fill="#8e8b82" font-size="10">니즈·장벽</text>
+    <rect x="136" y="122" width="128" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="200" y="138" text-anchor="middle" fill="#252523">경쟁 조사</text><text x="200" y="151" text-anchor="middle" fill="#8e8b82" font-size="10">포지션·격차</text>
+    <rect x="136" y="164" width="128" height="34" rx="7" fill="#fff" stroke="#e6dfd8"/><text x="200" y="180" text-anchor="middle" fill="#252523">채널 조사</text><text x="200" y="193" text-anchor="middle" fill="#8e8b82" font-size="10">도달·비용</text>
+    <text x="200" y="105" text-anchor="middle" fill="#a9583e" font-size="10.5">↑ 서로를 기다리지 않는다 ↓</text>
+    <path d="M272 25h34M272 67h34M272 139h34M272 181h34" stroke="#d8cec2" stroke-width="1.3"/>
+    <rect x="314" y="82" width="104" height="42" rx="8" fill="#efe9de" stroke="#e6dfd8"/>
+    <text x="366" y="100" text-anchor="middle" fill="#252523">전략가</text><text x="366" y="114" text-anchor="middle" fill="#6c6a64" font-size="10">통합</text>
+    <path d="M426 103h30" stroke="#cc785c" stroke-width="1.5"/><path d="M456 103l-7-4v8z" fill="#cc785c"/>
+    <rect x="464" y="82" width="104" height="42" rx="8" fill="#fff" stroke="#5db8a6" stroke-width="1.6"/>
+    <text x="516" y="100" text-anchor="middle" fill="#252523">리뷰어</text><text x="516" y="114" text-anchor="middle" fill="#6c6a64" font-size="10">별도 검증</text>
+    <path d="M516 78v-16h-150v16" stroke="#5db8a6" stroke-width="1.3" stroke-dasharray="4 3" fill="none"/>
+    <path d="M366 78l-4-7h8z" fill="#5db8a6"/>
+    <text x="441" y="56" text-anchor="middle" fill="#6c6a64" font-size="10">수정 요청</text>
+    <path d="M576 103h22" stroke="#cc785c" stroke-width="1.5"/><path d="M598 103l-7-4v8z" fill="#cc785c"/>
+    <rect x="606" y="76" width="90" height="54" rx="8" fill="#fff" stroke="#cc785c"/>
+    <text x="651" y="97" text-anchor="middle" fill="#141413" font-size="12">전략보고서</text>
+    <text x="651" y="113" text-anchor="middle" fill="#6c6a64" font-size="10">요약·우선순위·지표</text>
+    <text x="200" y="209" text-anchor="middle" fill="#a9583e" font-size="10.5">팬아웃 / 팬인</text>
+    <text x="516" y="209" text-anchor="middle" fill="#5db8a6" font-size="10.5">생성-검증</text>
+  </g>
+</svg>
+<figcaption>관점은 병렬로, 결론은 하나로, 품질은 별도로.</figcaption>
+</figure>
+
+<section class="callout callout-tip"><span class="callout-icon" aria-hidden="true">💡</span><div class="callout-body">
+<p><strong>정답이 아니라 기준선입니다.</strong> 조사자가 4명이 아니라 3명이어도, 이름이 달라도 괜찮습니다. <strong>조사가 서로 독립이고 통합과 검증이 다른 담당이면</strong> 성공입니다.</p>
+</div></section>
+
+<div class="table-wrap"><table>
+<thead><tr><th style="width:130px">역할</th><th>책임</th><th style="width:240px">전달물</th></tr></thead>
+<tbody>
+<tr><td>시장 조사자</td><td>카테고리 규모와 변화 방향</td><td>사실 + 출처</td></tr>
+<tr><td>고객 조사자</td><td>니즈와 구매 장벽</td><td>사실 + 출처</td></tr>
+<tr><td>경쟁 조사자</td><td>경쟁 포지션과 비어 있는 자리</td><td>사실 + 출처</td></tr>
+<tr><td>채널 조사자</td><td>채널별 도달과 비용</td><td>사실 + 출처</td></tr>
+<tr><td><strong>전략가</strong></td><td>네 조사를 <strong>하나의 선택</strong>으로 통합</td><td>1페이지 요약 + 실행 우선순위 표 + 측정지표</td></tr>
+<tr><td><strong>리뷰어</strong></td><td>근거·실행 가능성·누락 점검</td><td>검토 의견 + 수정 요청</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="sec">
+<h2>예상 산출물</h2>
+<p>좋은 전략보고서는 네 층으로 읽힙니다.</p>
+<div class="mission">
+  <div class="mi"><b>관찰</b><span>무슨 일이 일어나는가 — 사실 + 출처</span></div>
+  <div class="mi"><b>해석</b><span>왜 그런가 — 가정임을 밝힌 판단</span></div>
+  <div class="mi"><b>선택</b><span>그래서 무엇을 할 것인가 — 우선순위</span></div>
+  <div class="mi"><b>측정</b><span>무엇으로 성공을 판단하는가 — 지표</span></div>
+</div>
+
+<blockquote class="rule"><p><strong>좋은 전략보고서는 정보보다 선택을 보여줍니다.</strong> 그래서 1페이지 요약에는 <strong>"무엇을 하지 않을 것인가"</strong>가 반드시 있어야 합니다. 그 문장이 없으면 그것은 아직 전략이 아니라 조사 결과입니다. 이것이 본인 결과를 판정하는 가장 강력한 기준입니다.</p></blockquote>
+</section>
+
+<section class="sec">
+<h2 id="체크리스트">검토 체크리스트</h2>
+<ul class="checks">
+  <li><label><input type="checkbox"><span>조사 담당이 4개 관점으로 나뉘어 있고, 서로의 결과를 기다리지 않는 구조다</span></label></li>
+  <li><label><input type="checkbox"><span>통합을 담당하는 역할과 검증을 담당하는 역할이 <strong>다른 에이전트</strong>다</span></label></li>
+  <li><label><input type="checkbox"><span>1페이지 요약이 실제로 1페이지 분량이다</span></label></li>
+  <li><label><input type="checkbox"><span>1페이지 요약에 &quot;무엇을 하지 않을 것인가&quot;가 적혀 있다</span></label></li>
+  <li><label><input type="checkbox"><span>실행 우선순위 표에 판단 근거 열이 있다</span></label></li>
+  <li><label><input type="checkbox"><span>사실과 가정이 표기로 구분되어 있다 (예: <code>[사실]</code> / <code>[가정]</code>)</span></label></li>
+  <li><label><input type="checkbox"><span>모든 외부 주장에 출처가 붙어 있다</span></label></li>
+</ul>
+<p class="checks-gate"><strong>7개 중 6개 이상이면 통과입니다.</strong> 2번과 4번은 이 실습의 핵심이라 반드시 통과해야 합니다.</p>
+</section>
+
+<section class="sec">
+<h2>이럴 때는</h2>
+<div class="table-wrap"><table>
+<thead><tr><th style="width:250px">증상</th><th>이렇게 하세요</th></tr></thead>
+<tbody>
+<tr><td>리뷰어가 &quot;문제 없음&quot;만 말한다</td><td>리뷰 기준이 추상적이면 이렇게 됩니다. &quot;근거 없는 주장, 실행 주체가 없는 항목, 누락된 관점을 각각 3가지씩 지적해 달라&quot;로 구체화해 다시 실행하세요.</td></tr>
+<tr><td>네 조사 결과가 서로 베낀 것처럼 같다</td><td>조사자들이 같은 질문을 받은 것입니다. 관점별로 다른 질문을 지정하세요 — 시장은 규모, 고객은 장벽, 경쟁은 빈 자리, 채널은 비용.</td></tr>
+<tr><td>사실과 가정 구분이 없다</td><td>브리프 5행을 강조해 다시 실행하세요. 하네스가 스킬에 표기 규칙을 넣지 않은 것입니다 — &quot;모든 판단 문장에 <code>[가정]</code> 을 붙여 달라&quot;가 잘 먹습니다.</td></tr>
+<tr><td>출력이 너무 길어 1페이지가 3페이지다</td><td>&quot;1페이지 요약은 600자 이내&quot;처럼 분량을 숫자로 지정하세요.</td></tr>
+<tr><td>30분을 넘긴다</td><td>조사 항목에 상한을 두세요 — &quot;관점별 사실 3개까지&quot;.</td></tr>
+<tr><td>브랜드를 못 정해서 막힌다</td><td>가상 브랜드로 하세요. <a href="3-pptx.html#준비물">예시 전략보고서</a>가 가상 브랜드로 쓰인 좋은 참고입니다.</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="sec">
+<h2>다음 단계</h2>
+<p>실습 2가 <strong>구조를 고르는 것</strong>이었다면, 실습 3은 <strong>산출물을 다듬는 것</strong>입니다. 방금 만든 전략보고서를 그대로 입력으로 씁니다 — <strong>파일로 저장했는지 확인하세요.</strong></p>
+<div class="next-grid">
+  <a class="next-card" href="3-pptx.html"><span class="k">다음 · 40분</span><strong>실습 3 · 샘플 형식으로 새 PPT</strong><span>이 전략을 편집 가능한 슬라이드 3장으로.</span></a>
+  <a class="next-card" href="../concept.html"><span class="k">복습</span><strong>개념 · 패턴 선택 3질문</strong><span>패턴 두 개를 겹쳐 쓴 것을 확인해 보세요.</span></a>
+</div>
+</section>
+
+</article>
+
+<nav class="pager" aria-label="페이지 이동">
+  <a href="1-youtube.html"><span class="dir">← 이전</span><strong>실습 1 · 유튜브 콘텐츠 기획 팀</strong></a>
+  <a class="pager-next" href="3-pptx.html"><span class="dir">다음 →</span><strong>실습 3 · 샘플 형식으로 새 PPT</strong></a>
+</nav>
+
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>harness-edu2 · 실습 2</span>
+  <span class="r">개념·패턴 출처 <a href="https://github.com/revfactory/harness" target="_blank" rel="noopener">revfactory/harness</a></span>
+</div></footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

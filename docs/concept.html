@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개념 — 하네스 엔지니어링 · 메타스킬 6단계 · 6가지 패턴 · harness-edu2</title>
+<meta name="description" content="하네스 엔지니어링의 개념, 메타스킬 6단계, 6가지 아키텍처 패턴, 패턴 선택 3질문. revfactory/harness 원본 기준 15분 분량.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23faf9f5'/%3E%3Cg fill='%23141413'%3E%3Crect x='11' y='1' width='2' height='22'/%3E%3Crect x='1' y='11' width='22' height='2'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(45 12 12)'/%3E%3Crect x='3.8' y='3.8' width='2' height='16.4' transform='rotate(-45 12 12)'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="concept">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="topnav"><div class="wrap">
+  <a class="brand" href="index.html">
+    <span class="spike" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="#141413"><rect x="11" y="1" width="2" height="22"/><rect x="1" y="11" width="22" height="2"/><rect x="3.8" y="3.8" width="2" height="16.4" transform="rotate(45 12 12)"/><rect x="3.8" y="3.8" width="2" height="16.4" transform="rotate(-45 12 12)"/></g></svg></span>
+    <span class="brand-full">harness-edu2</span>
+  </a>
+  <nav aria-label="주요 메뉴">
+    <a href="index.html">과정 홈</a>
+    <a href="concept.html" aria-current="page">개념</a>
+    <a href="practice/1-youtube.html">실습 1</a>
+    <a href="practice/2-marketing.html">실습 2</a>
+    <a href="practice/3-pptx.html">실습 3</a>
+    <a href="install/index.html">설치가이드</a>
+  </nav>
+</div></header>
+
+<main id="main" class="page">
+
+<div class="hero">
+  <div class="eyebrow">개념 · 15분</div>
+  <h1>하네스 엔지니어링</h1>
+  <p class="lead">이 페이지를 덮을 때 <strong>내 일이 어떤 패턴인지 3가지 질문으로 판단할 수 있게</strong> 됩니다. 정의를 외우는 것이 목적이 아닙니다.</p>
+</div>
+
+<article class="prose">
+
+<!-- ══ 1부 ══════════════════════════════════════════════ -->
+<section class="sec">
+<div class="eyebrow">1부 · 왜 필요한가</div>
+<h2>프롬프트는 이번 결과를, 하네스는 다음 달 결과까지 좋게 합니다</h2>
+
+<p>프롬프트를 잘 쓰면 이번 답이 좋아집니다. 그런데 다음 주에 같은 일을 하려면 그 문장을 다시 찾아야 하고, 옆자리 동료는 다른 답을 받습니다. <strong>하네스(harness)</strong>는 그 한 번의 성공을 <strong>일하는 방식</strong>으로 굳히는 도구입니다 — 업무 설명을 읽고 AI 팀 구조로 바꿔 줍니다.</p>
+
+<h3>에이전트(누가) × 스킬(어떻게)</h3>
+
+<p>이 교재 전체를 관통하는 한 문장입니다. 하네스는 두 가지를 따로 만듭니다.</p>
+
+<div class="prep">
+  <div class="prep-item"><b>에이전트 · 누가</b><span>특정 역할을 맡은 AI 담당자. "시장 조사를 맡는 사람"</span></div>
+  <div class="prep-item"><b>스킬 · 어떻게</b><span>그 담당자가 따르는 절차와 기준. "출처 없는 주장은 쓰지 않는다"</span></div>
+</div>
+
+<p>역할과 절차를 한 덩어리로 쓰면 재사용이 안 됩니다. 사무실에 비유하면, <strong>직무기술서(누가)와 업무 매뉴얼(어떻게)을 따로 두는 것</strong>과 같습니다. 사람이 바뀌어도 매뉴얼은 남고, 매뉴얼을 고치면 모든 담당자에게 적용됩니다.</p>
+
+<h3>하네스는 한 번 만들고 끝나지 않습니다</h3>
+
+<p>실제로 써 보면 반드시 아쉬운 곳이 나옵니다. 하네스 원본은 그 아쉬움을 되먹이는 절차를 <strong>하네스 진화 메커니즘</strong>으로 부릅니다 — 초기 구성과 최종 구성의 차이를 포착해, 다음번 같은 도메인의 첫 초안이 더 좋은 상태에서 시작하게 만듭니다.</p>
+
+<figure class="diagram">
+<svg viewBox="0 0 700 150" role="img" aria-labelledby="d-evo-t d-evo-d">
+  <title id="d-evo-t">하네스 진화 메커니즘</title>
+  <desc id="d-evo-d">초기 하네스가 실제 프로젝트에서 쓰이면서 출시 하네스로 바뀌고, 그 차이가 팩토리로 되먹여져 다음 세대의 더 나은 초안이 됩니다.</desc>
+  <g font-family="Inter, Noto Sans KR, sans-serif" font-size="13">
+    <rect x="8" y="20" width="130" height="42" rx="8" fill="#efe9de" stroke="#e6dfd8"/>
+    <text x="73" y="46" text-anchor="middle" fill="#252523">초기 하네스</text>
+    <path d="M146 41h44" stroke="#cc785c" stroke-width="1.5"/><path d="M190 41l-7-4v8z" fill="#cc785c"/>
+    <rect x="198" y="20" width="140" height="42" rx="8" fill="#fff" stroke="#e6dfd8"/>
+    <text x="268" y="46" text-anchor="middle" fill="#252523">실제 프로젝트 사용</text>
+    <path d="M346 41h44" stroke="#cc785c" stroke-width="1.5"/><path d="M390 41l-7-4v8z" fill="#cc785c"/>
+    <rect x="398" y="20" width="130" height="42" rx="8" fill="#efe9de" stroke="#e6dfd8"/>
+    <text x="463" y="46" text-anchor="middle" fill="#252523">출시 하네스</text>
+    <path d="M463 66v22h-190" stroke="#a9583e" stroke-width="1.5" stroke-dasharray="4 3" fill="none"/>
+    <path d="M273 88l7-4v8z" fill="#a9583e"/>
+    <rect x="150" y="96" width="123" height="40" rx="8" fill="#181715"/>
+    <text x="211" y="121" text-anchor="middle" fill="#faf9f5">팩토리</text>
+    <text x="290" y="112" fill="#6c6a64" font-size="12">차이(델타)를 되먹임</text>
+    <text x="290" y="129" fill="#6c6a64" font-size="12">→ 다음 세대의 더 나은 초안</text>
+  </g>
+</svg>
+<figcaption>하네스는 고정물이 아니라 세대를 거쳐 나아지는 시스템입니다.</figcaption>
+</figure>
+
+<p class="src">출처: <a href="https://github.com/revfactory/harness" target="_blank" rel="noopener">revfactory/harness</a> · <code>README_KO.md</code> §하네스 진화 메커니즘</p>
+
+<blockquote><p>실습 1·2·3을 마친 뒤 아쉬운 점이 남았다면, 그것이 곧 다음 하네스의 개선 항목입니다. 결과를 고치지 말고 <strong>하네스를 고치는 것</strong>이 이 방식의 핵심입니다.</p></blockquote>
+</section>
+
+<!-- ══ 2부 ══════════════════════════════════════════════ -->
+<section class="sec">
+<div class="eyebrow">2부 · 어떻게 만들어지나</div>
+<h2>메타스킬 6단계</h2>
+
+<p>"하네스를 구성해줘"라고 말하면 아래 6단계가 순서대로 지나갑니다. 실습에서 화면에 이 단계들이 흐르는 것을 알아볼 수 있게, 각 단계에서 <strong>무엇이 결정되는지</strong>만 기억하세요.</p>
+
+<div class="steps">
+  <div class="st"><span class="n">01</span><b>도메인 분석</b><span>목표·대상·제약이 무엇인지</span></div>
+  <div class="st"><span class="n">02</span><b>아키텍처 설계</b><span>순차인가 병렬인가, 검토가 따로 필요한가</span></div>
+  <div class="st"><span class="n">03</span><b>에이전트 정의</b><span>누가 무엇까지 책임지는가</span></div>
+  <div class="st"><span class="n">04</span><b>스킬 생성</b><span>각자가 따를 절차와 완료 기준</span></div>
+  <div class="st"><span class="n">05</span><b>오케스트레이션</b><span>누가 언제 무엇을 누구에게 넘기는가</span></div>
+  <div class="st"><span class="n">06</span><b>검증</b><span>산출물이 기준을 통과했는가</span></div>
+</div>
+
+<p><strong>2단계가 가장 중요합니다.</strong> 역할 수를 늘리기 전에 일의 모양을 먼저 정합니다. 그 모양이 3부의 패턴입니다.</p>
+
+<p class="src">출처: <code>revfactory/harness · skills/harness/SKILL.md</code> §워크플로우. 원본은 현황 감사(Phase&nbsp;0)와 진화(Phase&nbsp;7)를 포함한 8단계이며, 이 둘은 <strong>이미 만든 하네스를 고칠 때 앞뒤에 붙는 단계</strong>입니다. 처음 만들 때 화면에 보이는 것은 위 6단계입니다.</p>
+
+<p>→ 실습 1에서 이 6단계가 실제로 지나가는 것을 확인합니다. <a href="practice/1-youtube.html">실습 1로 가기</a></p>
+</section>
+
+<!-- ══ 3부 ══════════════════════════════════════════════ -->
+<section class="sec">
+<div class="eyebrow">3부 · 어떤 모양이 있나</div>
+<h2>6가지 아키텍처 패턴</h2>
+
+<p>패턴은 <strong>일의 모양에 붙은 이름</strong>입니다. 이름을 외우는 것보다, 내 일이 어느 모양인지 알아보는 것이 목적입니다. 카드 6장을 같은 형식으로 읽으세요.</p>
+
+<div class="patterns">
+  <div class="pt">
+    <h3>파이프라인</h3>
+    <div class="dia">A → B → C</div>
+    <p class="def">앞 단계 결과가 다음 단계의 입력이 됩니다.</p>
+    <p class="when"><b>이럴 때</b> 순서를 바꿀 수 없는 일. 조사가 끝나야 기획을 할 수 있는 경우.</p>
+    <span class="use">교재에서 · <a href="practice/3-pptx.html">실습 3</a></span>
+  </div>
+  <div class="pt">
+    <h3>팬아웃 / 팬인</h3>
+    <div class="dia">분배 → A·B·C → 통합</div>
+    <p class="def">독립된 관점을 동시에 모아 하나로 합칩니다.</p>
+    <p class="when"><b>이럴 때</b> 관점끼리 서로를 기다릴 필요가 없는 조사. 시장·고객·경쟁을 따로 보는 경우.</p>
+    <span class="use">교재에서 · <a href="practice/2-marketing.html">실습 2</a></span>
+  </div>
+  <div class="pt">
+    <h3>생성-검증</h3>
+    <div class="dia">생성 → 검증 → 수정</div>
+    <p class="def">만드는 쪽과 검사하는 쪽을 다른 담당자로 분리합니다.</p>
+    <p class="when"><b>이럴 때</b> 품질 기준이 명확한 산출물. 타 부서 검토를 거치는 문서.</p>
+    <span class="use">교재에서 · <a href="practice/2-marketing.html">실습 2</a> · <a href="practice/3-pptx.html">실습 3</a></span>
+  </div>
+  <div class="pt">
+    <h3>전문가 풀</h3>
+    <div class="dia">상황 → 필요한 사람만</div>
+    <p class="def">매번 전원이 아니라 상황에 맞는 담당자만 골라 부릅니다.</p>
+    <p class="when"><b>이럴 때</b> 건마다 필요한 전문성이 다른 일. 문의 유형별 담당자 배정.</p>
+    <span class="use">교재에서 · <a href="practice/1-youtube.html">실습 1</a>의 확장</span>
+  </div>
+  <div class="pt is-side">
+    <h3>감독자</h3>
+    <div class="dia">중앙 → 동적 분배</div>
+    <p class="def">중앙 담당자가 진행 상태를 보며 일을 그때그때 나눕니다.</p>
+    <p class="when"><b>이럴 때</b> 일의 양과 순서를 미리 정할 수 없는 경우.</p>
+    <span class="use">이 교재에서는 개념만 다룹니다</span>
+  </div>
+  <div class="pt is-side">
+    <h3>계층적 위임</h3>
+    <div class="dia">상위 → 하위 → 하위</div>
+    <p class="def">상위 담당자가 하위에게 다시 쪼개 맡깁니다.</p>
+    <p class="when"><b>이럴 때</b> 큰 일을 계속 쪼개야 하는 경우.</p>
+    <span class="use">이 교재에서는 개념만 다룹니다</span>
+  </div>
+</div>
+
+<p class="src">출처: <code>revfactory/harness · README_KO.md</code> §아키텍처 패턴 · <code>references/agent-design-patterns.md</code>. 원본은 <strong>조건부 토론</strong>과 <strong>단계별 팀 재구성</strong>을 더한 8가지를 제공합니다. 두 심화 패턴은 15명 이상 규모의 이야기라 이 교재에서는 이름만 남깁니다.</p>
+
+<h3>패턴 선택 — 3가지 질문이면 충분합니다</h3>
+
+<p>표를 외우는 대신 이 세 질문을 던지세요.</p>
+
+<div class="qs">
+  <div class="q">
+    <span class="k">질문 01</span>
+    <p>앞 단계 결과가 다음 단계에 꼭 필요한가?</p>
+    <span class="a">예 → 파이프라인</span>
+  </div>
+  <div class="q">
+    <span class="k">질문 02</span>
+    <p>독립된 관점을 동시에 모을 수 있는가?</p>
+    <span class="a">예 → 팬아웃 / 팬인</span>
+  </div>
+  <div class="q">
+    <span class="k">질문 03</span>
+    <p>만든 사람이 아닌 다른 눈이 검사해야 하는가?</p>
+    <span class="a">예 → 생성-검증</span>
+  </div>
+</div>
+
+<section class="callout callout-tip"><span class="callout-icon" aria-hidden="true">💡</span><div class="callout-body">
+<p><strong>패턴은 하나를 고르는 것이 아닙니다.</strong> 세 질문에 다 "예"라면 세 패턴을 겹쳐 씁니다 — 실습 2와 실습 3이 정확히 그 경우입니다. "내 일은 여섯 중 어디에 속하나"에서 막히지 마세요. 겹쳐 쓰는 것이 정상입니다.</p>
+</div></section>
+</section>
+
+<!-- ══ 정리 ══════════════════════════════════════════════ -->
+<section class="sec">
+<div class="eyebrow">이제 할 일</div>
+<h2>여기까지가 개념입니다</h2>
+<p class="sub">남은 105분은 전부 직접 돌려 보는 시간입니다. 세 실습은 <strong>팀을 만든다 → 구조를 고른다 → 산출물을 다듬는다</strong> 순서로 이어집니다.</p>
+<div class="next-grid">
+  <a class="next-card" href="practice/1-youtube.html"><span class="k">다음 · 25분</span><strong>실습 1 · 유튜브 기획 팀</strong><span>한 문장으로 팀이 만들어지는 것을 봅니다.</span></a>
+  <a class="next-card" href="install/index.html"><span class="k">아직 설치 전이면</span><strong>설치가이드</strong><span>공통 준비 25~35분. 이것만 필수입니다.</span></a>
+</div>
+</section>
+
+</article>
+
+<nav class="pager" aria-label="페이지 이동">
+  <a href="index.html"><span class="dir">← 이전</span><strong>과정 홈</strong></a>
+  <a class="pager-next" href="practice/1-youtube.html"><span class="dir">다음 →</span><strong>실습 1 · 유튜브 콘텐츠 기획 팀</strong></a>
+</nav>
+
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>harness-edu2 · 개념</span>
+  <span class="r">개념·패턴 출처 <a href="https://github.com/revfactory/harness" target="_blank" rel="noopener">revfactory/harness</a></span>
+</div></footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
